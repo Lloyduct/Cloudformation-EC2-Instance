@@ -9,8 +9,14 @@
   },
     "InstanceType": {
       "Description": "EC2 instance type",
-      "Type": "String",
+      "Type": "/dev/sdh",
       "Default": "t2.micro"
+  },
+  "Type" : "AWS::EC2::VolumeAttachment",
+  "Properties" : {
+      "Device" : String,
+      "InstanceId" : i-06e60da63b5fe6cd1,
+      "VolumeId" : vol-0c8b959cbf2a7d148
     },
     "ImageID": {
       "Description": "EC2 instance type",
