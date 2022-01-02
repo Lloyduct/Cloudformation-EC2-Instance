@@ -7,6 +7,21 @@
       "Type": "AWS::EC2::KeyPair::KeyName",
       "Default": "lloydtest1"
     },
+    "MyVolume" : {
+      "Type" : "AWS::EC2::Volume",
+      "Properties" : {
+        "Size" : "100",
+        "AvailabilityZone" : "eu-west-1a"
+      }
+    },
+    "attachment" : {
+      "Type" : "AWS::EC2::VolumeAttachment",
+      "Properties" : {
+        "InstanceId" : { "Ref" : "i-00da5c04cf889bd6a" },
+        "VolumeId"  : { "Ref" : "vol-02f9a2ffe5cdea71d" },
+        "Device" : "/dev/sdh"
+      }
+    }
     "InstanceType": {
       "Description": "EC2 instance type",
       "Type": "String",
