@@ -7,13 +7,6 @@
       "Type": "AWS::EC2::KeyPair::KeyName",
       "Default": "lloydtest1"
     },
-    "MyVolume" : {
-      "Type" : "AWS::EC2::Volume",
-      "Properties" : {
-        "Size" : "100",
-        "AvailabilityZone" : "eu-west-1c"
-      }
-    },
     "attachment" : {
       "Type" : "AWS::EC2::VolumeAttachment",
       "Properties" : {
