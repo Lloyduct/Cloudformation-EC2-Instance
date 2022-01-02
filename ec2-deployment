@@ -21,7 +21,7 @@
         "VolumeId"  : { "Ref" : "vol-02f9a2ffe5cdea71d" },
         "Device" : "/dev/sdh"
       }
-    }
+    },
     "InstanceType": {
       "Description": "EC2 instance type",
       "Type": "String",
