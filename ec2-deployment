@@ -6,16 +6,7 @@
       "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instance",
       "Type": "AWS::EC2::KeyPair::KeyName",
       "Default": "lloydtest1"
-    },
-    "attachment" : {
-      "Type" : "AWS::EC2::VolumeAttachment",
-      "Properties" : {
-        "InstanceId" : { "Ref" : "i-00da5c04cf889bd6a" },
-        "VolumeId"  : { "Ref" : "vol-0c8b959cbf2a7d148" },
-        "Device" : "/dev/sdh"
-      }
-    }
-    },
+  },
     "InstanceType": {
       "Description": "EC2 instance type",
       "Type": "String",
