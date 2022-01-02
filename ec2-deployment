@@ -10,15 +10,15 @@
     "MyVolume" : {
       "Type" : "AWS::EC2::Volume",
       "Properties" : {
-        "Size" : "50",
-        "AvailabilityZone" : "xyz"
+        "Size" : "100",
+        "AvailabilityZone" : "eu-west-1c"
       }
     },
     "attachment" : {
       "Type" : "AWS::EC2::VolumeAttachment",
       "Properties" : {
-        "InstanceId" : { "Ref" : "MyEc2Instance" },
-        "VolumeId"  : { "Ref" : "MyVolume" },
+        "InstanceId" : { "Ref" : "i-00da5c04cf889bd6a" },
+        "VolumeId"  : { "Ref" : "vol-0c8b959cbf2a7d148" },
         "Device" : "/dev/sdh"
       }
     }
