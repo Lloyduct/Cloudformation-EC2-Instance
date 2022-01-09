@@ -1,0 +1,51 @@
+ec2-deployment
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Description" : "AWS CloudFormation Sample Template",
+  "Parameters" : {
+    "KeyName": {
+      "Description" : "Name of an existing EC2 KeyPair to enable SSH access to the instance",
+      "Type": "AWS::EC2::KeyPair::KeyName",
+      "Default": "lloydtest1"
+    },
+    "InstanceType": {
+      "Description": "EC2 instance type",
+      "Type": "String",
+      "Default": "t2.micro"
+    },
+    "ImageID": {
+      "Description": "EC2 instance type",
+      "Type": "String",
+      "Default": "ami-04dd4500af104442f"
+    },
+    "SecurityGroupId" : {
+      "Type" : "String",
+      "Description" : "The SecurityGroupId of an existing EC2 SecurityGroup in your Virtual Private Cloud (VPC)",
+      "Default": "sg-026e50e71294c22da"
+    },
+    "SubnetID": {
+      "Description": "Subnets where logging EC2 instances can be deployed, must be in same VPC as selected above",
+      "Type": "String","ConstraintDescription": "must be valid subnet.",
+      "Default": "subnet-b75f56d1"
+    }
+  },
+  "Resources" : {
+    "EC2Instance" : {
+      "Type" : "AWS::EC2::Instance",
+     "Properties" : {
+        "InstanceType" : { "Ref" : "InstanceType" },
+        "SecurityGroupIds" : [{ "Ref" : "SecurityGroupId"}],
+        "KeyName" : { "Ref" : "KeyName" },
+        "ImageId" : { "Ref" : "ImageID" },
+        "InstanceInitiatedShutdownBehavior" : "stop",
+        "SubnetId" : { "Ref": "SubnetID" }
+      }
+    }
+  },
+  "Outputs" : {
+    "InstanceId" : {
+      "Description" : "InstanceId of the newly created EC2 instance",
+      "Value" : { "Ref" : "EC2Instance" }
+    }
+  }
+}
