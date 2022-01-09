@@ -10,7 +10,7 @@
     "InstanceType": {
       "Description": "EC2 instance type",
       "Type": "String",
-      "Default": "t2.micro"
+      "Default": "t2.small"
     },
     "ImageID": {
       "Description": "EC2 instance type",
